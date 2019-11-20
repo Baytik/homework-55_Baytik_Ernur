@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import Ingredient from "./components/Ingredients/Ingredients";
+import {Ingredients as ing} from './img/img'
+import BurgerBread from "./components/Burger/BurgerBread";
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    state = {
+        ingredients: [
+            {name: 'Meat', count: 0,},
+            {name: 'Cheese', count: 0,},
+            {name: 'Bacon', count: 0,},
+            {name: 'Salad', count: 0,},
+        ]
+    };
+  render() {
+    console.log(ing);
+    return (
+        <div className='mainBlock'>
+          <h4>Ingredients</h4>
+          {ing.map(ing => {
+            return (
+                <Ingredient img = {ing.image} name = {ing.name} />
+            )
+          })}
+          <BurgerBread/>
+        </div>
+    );
+  }
 }
 
 export default App;
