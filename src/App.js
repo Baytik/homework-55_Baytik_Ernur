@@ -14,29 +14,22 @@ class App extends Component {
         totalPrice: 20,
     };
 
-    addToppings = () => {
-        let ingredients = [...this.state.ingredients];
-        for (let i = 0; i < ingredients; i++) {
-            console.log(ingredients[i])
-        }
-    };
-
     addIngr = obj => {
         let ingredients = [...this.state.ingredients];
         const ingredientsIndex = ingredients.findIndex(t => t.name === obj.name);
         ingredients[ingredientsIndex].count++;
         let totalPrice = this.state.totalPrice;
         totalPrice += obj.price;
-        this.setState({ingredients,totalPrice});
+        this.setState({ingredients,totalPrice})
     };
 
     removeIngr = name => {
         const ingredients = [...this.state.ingredients];
-        const ingredientsIndex = ingredients.findIndex(r => r.name === name.name);
+        const ingredientsIndex = ingredients.findIndex(t => t.name === name.name);
         ingredients[ingredientsIndex].count--;
         let totalPrice = this.state.totalPrice;
         totalPrice -= name.price;
-        this.setState({ingredients, totalPrice})
+        this.setState({ingredients,totalPrice})
     };
 
   render() {
@@ -46,14 +39,14 @@ class App extends Component {
         <div className='mainBlock'>
           <h4>Ingredients</h4>
                 <Ingredient
+
                   ingredientsApp={this.state.ingredients}
-                  totalPriceApp={this.state.totalPrice}
                   addIngredient={this.addIngr}
                   remove={this.removeIngr}
                 />
 
         </div>
-            <RenderBurger totalPrice={this.state.totalPrice} />
+                <RenderBurger ingredients={this.state.ingredients} total={this.state.totalPrice}/>
             </div>
         </Fragment>
     );

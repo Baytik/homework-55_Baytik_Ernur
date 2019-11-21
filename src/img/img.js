@@ -5,7 +5,7 @@ const ingredients = {
     saladImg: 'https://purepng.com/public/uploads/large/purepng.com-salad-leafvegetables-salad-salad-leaf-leaf-lettuce-941524727356d9flc.png',
 
 };
-export const Ingredients = [
+export const INGREDIENTS = [
     {name: 'Meat', price: 50, image: ingredients.meatImg, },
     {name: 'Cheese', price: 20, image: ingredients.cheeseImg,},
     {name: 'Bacon', price: 30, image: ingredients.baconImg,},
