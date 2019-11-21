@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BurgerBread = props => {
+const RenderBurger = props => {
     return (
         <div className="Burger">
             <h4>Burger</h4>
@@ -15,4 +15,4 @@ const BurgerBread = props => {
     );
 };
 
-export default BurgerBread;
+export default RenderBurger;

@@ -1,11 +1,9 @@
 import React, {Component,Fragment} from 'react';
+import './App.css';
 import Ingredient from "./components/Ingredients/Ingredients";
-
-import BurgerBread from "./components/Burger/BurgerBread";
-import './App.css'
+import RenderBurger from "./components/Burger/RenderBurger";
 
 class App extends Component {
-
     state = {
                 ingredients: [
             {name: 'Meat', count: 0,},
@@ -55,7 +53,7 @@ class App extends Component {
                 />
 
         </div>
-            <BurgerBread totalPrice={this.state.totalPrice} />
+            <RenderBurger totalPrice={this.state.totalPrice} />
             </div>
         </Fragment>
     );
